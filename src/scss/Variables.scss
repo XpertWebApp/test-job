@@ -6,6 +6,7 @@ $Active-Border: #bebec2;
 $Theme-Primary: #885fff !important;
 $FormField-background: #fcfcfc !important;
 $Heading: #6f6e73 !important;
+$Heading2: #0f2035 !important;
 $HeadingActive: #414047 !important;
 $LightButton: #bebec2 !important;
 $ActiveLink: #587be0 !important;
@@ -32,4 +33,9 @@ $LabelColor: #808080 !important;
   font-size: 16px !important;
   line-height: 22px !important;
   letter-spacing: -0.408px !important;
+}
+
+@mixin buttonTranpsarent {
+  background-color: transparent !important;
+  border: none;
 }
