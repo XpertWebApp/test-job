@@ -1,17 +1,19 @@
 .page-wrapper {
   .page-header {
-    padding: 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
     flex-direction: row;
     background-color: $Background1;
     box-shadow: none;
     border-bottom: 1px solid $Border-color;
     position: relative;
+    height: 71px;
     .close-verification {
       position: absolute;
-      top: 18px;
+      top: 23px;
       right: 15px;
     }
     .account-progress {
@@ -86,7 +88,7 @@
     height: 40px;
   }
   .bLink {
-    margin-top: 25px;
+    margin-top: 20px;
     @include FontMedium;
     display: block;
   }

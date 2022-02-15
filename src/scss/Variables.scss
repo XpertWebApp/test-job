@@ -39,3 +39,9 @@ $LabelColor: #808080 !important;
   background-color: transparent !important;
   border: none;
 }
+
+@mixin FlexAllCenter {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
