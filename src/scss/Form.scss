@@ -1,0 +1,45 @@
+.form-field-main {
+  .form-control {
+    background: $FormField-background;
+    box-sizing: border-box;
+    height: 45px;
+    width: 100%;
+    .MuiInputBase-input {
+      height: 45px;
+      padding: 16px 20px;
+      box-sizing: border-box;
+      border: 1px solid $Active-Border;
+      border-radius: 8px;
+      &:focus {
+        border: 2px solid $Theme-Primary;
+      }
+    }
+  }
+  .MuiInput-root {
+    &::after {
+      display: none !important;
+    }
+    &::before {
+      display: none !important;
+    }
+  }
+  .login-continue {
+    margin-top: 30px;
+    width: 124px;
+    height: 40px;
+    .MuiSvgIcon-root {
+      font-size: 25px !important;
+    }
+  }
+  .continue-button {
+    background-color: $Theme-Primary;
+    box-shadow: none;
+    text-transform: capitalize;
+    border-radius: 10px;
+    @include LargeButtonFont;
+  }
+  .Mui-disabled {
+    color: $Theme-white;
+    background-color: $LightButton;
+  }
+}

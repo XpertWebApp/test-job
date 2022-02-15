@@ -1,0 +1,72 @@
+.page-wrapper {
+  .page-header {
+    background-color: $Theme-white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: row;
+    background-color: $Background1;
+    box-shadow: none;
+    border-bottom: 1px solid $Border-color;
+  }
+}
+.middle-content {
+  padding: 25px;
+  .MuiBox-root {
+    border: none !important;
+    padding: 0px !important;
+  }
+  .loginTabs {
+    margin-bottom: 15px;
+    .MuiTab-root {
+      color: $Heading;
+      text-transform: capitalize;
+      @include FontMidium;
+      min-width: 66px !important;
+      min-height: 30px !important;
+      padding: 6px 12px !important;
+      box-sizing: border-box;
+      &.Mui-selected {
+        color: $HeadingActive;
+      }
+    }
+    .MuiTabs-indicator {
+      background-color: transparent;
+      border: 1px solid $Active-Border;
+      border-radius: 10px;
+      height: 30px;
+      bottom: 17px;
+    }
+  }
+}
+.terms-policy-content {
+  margin: 0px 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $Border-color;
+  p {
+    display: flex;
+    flex-direction: column;
+    @include FontSmall;
+    text-align: center;
+    color: $Heading;
+  }
+}
+.bottom-page-links {
+  padding: 25px;
+  text-align: center;
+  h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .loginWith-button {
+    width: 186px;
+    height: 40px;
+  }
+}
+.main-content {
+  @media screen and (min-width: 767px) {
+    width: 40%;
+    margin: auto;
+  }
+}

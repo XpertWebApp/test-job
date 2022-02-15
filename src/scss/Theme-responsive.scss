@@ -1,0 +1,33 @@
+@mixin Phone {
+  @media (min-width: #{$Phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin PhoneSmall {
+  @media (min-width: #{$Phone-width}) and (max-width: #{$Phone-width1 - 1px}) {
+    @content;
+  }
+}
+
+@mixin PhoneMiddium {
+  @media (min-width: #{$Phone-width1}) and (max-width: #{$Phone-width2 - 1px}) {
+    @content;
+  }
+}
+@mixin PhoneLarge {
+  @media (min-width: #{$Phone-width2}) and (max-width: #{$Phone-width3 - 1px}) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$tabletPortrait-width - 1px}) {
+    @content;
+  }
+}
+@mixin TabletLandscape {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-width3}) {
+    @content;
+  }
+}

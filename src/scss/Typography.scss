@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Manrope', sans-serif !important;
+  background-color: $Theme-white;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+input,
+textarea {
+  font-family: 'Manrope', sans-serif !important;
+}
+.text-center {
+  text-align: center;
+}
+p {
+  margin: 0px;
+}
+a {
+  color: $ActiveLink;
+  text-decoration: none !important;
+}
+h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: $HeadingActive;
+  margin: 0px;
+}
+.MuiButton-root {
+  text-transform: capitalize !important;
+  border-radius: 10px !important;
+}
+.dark-button {
+  background-color: $HeadingActive;
+  @include LargeButtonFont;
+}
