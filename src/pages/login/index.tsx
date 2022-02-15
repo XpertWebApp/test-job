@@ -8,15 +8,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useHistory } from 'react-router-dom';
+import {pageProps,allyProps} from "../../modals";
 
-interface PageProps {
-     contained: string,
-     placeholder: string,
-}
-interface allyProps {
-    id:string,
-    'aria-controls':string,
-}
 function TabPanel(props:any) {
      const { children, value, index, ...other } = props;
    
@@ -48,7 +41,7 @@ function TabPanel(props:any) {
      };
    }
 
-const Login = (props:PageProps) => {
+const Login = (props:pageProps) => {
      const [value, setValue] = React.useState(0);
      const handleChange = (event:any, newValue:any) => {
           setValue(newValue); 
