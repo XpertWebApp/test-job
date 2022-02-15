@@ -11,10 +11,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 interface PageProps {
-     contained: string;
-     placeholder: string;
+     contained: string,
+     placeholder: string,
 }
-
+interface allyProps {
+    id:string,
+    'aria-controls':string,
+}
 function TabPanel(props:any) {
      const { children, value, index, ...other } = props;
    
@@ -39,14 +42,14 @@ function TabPanel(props:any) {
      index: PropTypes.number.isRequired,
      value: PropTypes.number.isRequired,
    };
-   function a11yProps(index: number) {
+   function a11yProps (index: number) :allyProps {
      return {
        id: `simple-tab-${index}`,      
        'aria-controls': `simple-tabpanel-${index}`,
      };
-   } 
-   const ariaLabel = { 'aria-label': 'description' };
-const Login = (props:any) => { 
+   }
+
+const Login = (props:PageProps) => {
      const [value, setValue] = React.useState(0);
      const handleChange = (event:any, newValue:any) => {
           setValue(newValue); 
@@ -56,10 +59,16 @@ const Login = (props:any) => {
           alert('Hello')
           // history.push('/otp');
      }
-     public static defaultProps = {
+    const defaultProps = {
           foo: "default",
           placeholder: ""
-      };
+     };
+    const returnTabId = (index:number):string=>{
+        return  `simple-tab-${index}`
+    }
+    const returnControls = (index:number):string=>{
+        return  `simple-tabpanel-${index}`
+    }
      return (
           <div className="page-wrapper">
                <AppBar position="static" className="page-header">
@@ -74,8 +83,15 @@ const Login = (props:any) => {
                          <Box sx={{ width: '100%' }}>
                               <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
                                    <Tabs value={value} onChange={handleChange} className="loginTabs" aria-label="basic tabs example" centered>
-                                        <Tab label="Email" {...a11yProps(0)} />
-                                        <Tab label="Phone" {...a11yProps(1)} />
+                                        <Tab
+                                            label="Email"
+                                            id={returnTabId(0)}
+                                            aria-controls={returnControls(0)}
+                                        />
+                                        <Tab
+                                            label="Phone"
+
+                                        />
                                    </Tabs>
                               </Box>
                               <TabPanel value={value} index={0}>
@@ -84,10 +100,9 @@ const Login = (props:any) => {
                                              <Input
                                                   type="text"
                                                   placeholder="johndoe@gmail.com"
-                                                  variant={props.contained}
                                                   className="form-control"
                                              />
-                                             <Button variant="contained" tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
+                                             <Button  className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                                   Continue
                                              </Button>
                                         </form>
@@ -99,7 +114,6 @@ const Login = (props:any) => {
                                              <Input
                                                   type="text"
                                                   placeholder="Ex (337) 378 8383"
-                                                  variant= {contained}
                                                   className="form-control"
                                              />
                                              <Button variant="contained" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
