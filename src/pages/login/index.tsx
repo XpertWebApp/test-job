@@ -121,7 +121,7 @@ const Login = (props:pageProps) => {
                     <div className="terms-policy-content"> 
                          <p>by clicking continue you must agree to near labs <span><Link href="#">Terms & Conditions</Link> and <Link href="#">Privacy Policy</Link></span> </p>
                     </div>
-                    <div className="bottom-page-links">
+                    <div className="bottompage-links">
                          <h3>Already have NEAR account?</h3>
                          <Button variant="contained" className="loginWith-button dark-button" endIcon={<ChevronRightIcon />}>
                               Log in with NEAR

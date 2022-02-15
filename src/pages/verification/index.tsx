@@ -4,6 +4,13 @@ import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useHistory } from 'react-router-dom';
 
+interface PageProps {
+     label: string, 
+     tabIndex: string,
+     className: string,
+     contained: string,
+     placeholder: string,
+}
 const Verification = () => {
      let history = useHistory();
      function handleVerify() {
@@ -21,7 +28,7 @@ const Verification = () => {
                          />
                     </div>
                </AppBar>
-               <div className="bottom-page-links verifyBy-email">
+               <div className="bottompage-links verifyBy-email">
                     <h3>We've sent a 6-digit verification code to the email address </h3>
                     <Link href="#" className="bLink">johndoe@gmail.com</Link>
                </div>
@@ -33,58 +40,40 @@ const Verification = () => {
                               <div className="multiOTPField">
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
                                    <Input
                                         type="text"
-                                        label="Email"
-                                        placeholder=""
-                                        variant="contained"
                                         className="form-control"
                                    />
-                              </div>
-                              <Button variant="contained" onClick={handleVerify} tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
-                                   Continue
+                              </div> 
+                              <Button onClick={handleVerify} className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
+                                    Continue
                               </Button>
                          </form>
                     </div>
                     </div>
-                    <div className="bottom-page-links verification-links">
+                    <div className="bottompage-links verification-links">
                          <h3>Didn't receive your code?</h3>
                          <Link href="#" className="bLink">Send to a different email address</Link>
                          <Link href="#" className="bLink">Resend your code </Link>
-                    </div>
+                    </div> 
                </main>
           </div>
      )
