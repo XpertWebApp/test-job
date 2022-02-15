@@ -1,13 +1,14 @@
-import React from 'react'
 import CloseIcon from './../../assets/images/cross-icon.svg'
 import { AppBar, Input, Button, Link } from '@mui/material';
-import PropTypes from 'prop-types';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useHistory } from 'react-router-dom';
 
-
-const Verification = (props) => {
+const Verification = () => {
+     let history = useHistory();
+     function handleVerify() {
+          history.push('/create-account');
+     }
      return (
           <div className="page-wrapper">
                <AppBar position="static" className="page-header">
@@ -73,7 +74,7 @@ const Verification = (props) => {
                                         className="form-control"
                                    />
                               </div>
-                              <Button variant="contained" tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
+                              <Button variant="contained" onClick={handleVerify} tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                    Continue
                               </Button>
                          </form>

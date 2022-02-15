@@ -46,7 +46,7 @@ const SecureAccount = (props) => {
                                         className="form-control"
                                    />
                               </div> 
-                              <Button variant="contained" tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
+                              <Button variant="contained" tabIndex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                    Continue
                               </Button>
                          </form>

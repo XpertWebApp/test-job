@@ -3,9 +3,13 @@ import CloseIcon from './../../assets/images/cross-icon.svg'
 import { AppBar, Input, Button, Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useHistory } from 'react-router-dom';
 
-
-const CreateAccount = (props) => {
+const CreateAccount = () => {
+     let history = useHistory();
+     function handleCreateAccount() {
+          history.push('/secure-account');
+     }
      return (
           <div className="page-wrapper">
                <AppBar position="static" className="page-header">
@@ -47,7 +51,7 @@ const CreateAccount = (props) => {
                                    />
                                    <span>.near</span>
                               </div>
-                              <Button variant="contained" tabindex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
+                              <Button variant="contained" onClick={handleCreateAccount} tabIndex="1" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                    Continue
                               </Button>
                          </form>

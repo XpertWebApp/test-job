@@ -64,8 +64,10 @@ const Login = (props:PageProps) => {
         return  `simple-tabpanel-${index}`
     }
     let history = useHistory();
-     function handleOTP() {
-          alert('Hello')
+     function handleOTPEmail() {
+          history.push('/verify');
+     }
+     function handleOTPWithPhone(){
           history.push('/verify');
      }
      return (
@@ -101,7 +103,7 @@ const Login = (props:PageProps) => {
                                                   placeholder="johndoe@gmail.com"
                                                   className="form-control"
                                              />
-                                             <Button onClick={handleOTP} className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
+                                             <Button onClick={handleOTPEmail} variant="contained" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                                   Continue
                                              </Button>
                                         </form>
@@ -115,7 +117,7 @@ const Login = (props:PageProps) => {
                                                   placeholder="Ex (337) 378 8383"
                                                   className="form-control"
                                              />
-                                             <Button variant="contained" className="login-continue continue-button" endIcon={<ChevronRightIcon />} disabled>
+                                             <Button onClick={handleOTPWithPhone} variant="contained" className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                                   Continue   
                                              </Button>    
                                         </form>       
