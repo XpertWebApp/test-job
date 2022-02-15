@@ -1,0 +1,52 @@
+import {SeedCardData} from "../modals";
+
+export const seedCardData : SeedCardData[] = [
+    {
+        id:1,
+        text:"gather"
+    },
+    {
+        id:2,
+        text:"engage"
+    },
+    {
+        id:3,
+        text:"father"
+    },
+    {
+        id:4,
+        text:"plant"
+    },
+    {
+        id:5,
+        text:"indego"
+    },
+    {
+        id:6,
+        text:"dental"
+    },
+    {
+        id:7,
+        text:"sick"
+    },
+    {
+        id:8,
+        text:"fungus"
+    },
+    {
+        id:9,
+        text:"river"
+    },
+    {
+        id:10,
+        text:"morning"
+    },
+    {
+        id:11,
+        text:"love"
+    },
+    {
+        id:12,
+        text:"cow"
+    },
+]

@@ -60,6 +60,12 @@
       margin-bottom: 10px;
       display: block;
     }
+    .MuiInput-root {
+      .MuiInput-input {
+        padding: 15px;
+        text-align: center;
+      }
+    }
   }
   .form-field {
     margin-bottom: 15px;

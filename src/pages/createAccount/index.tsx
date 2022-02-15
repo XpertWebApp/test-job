@@ -1,21 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CloseIcon from './../../assets/images/cross-icon.svg'
-import { AppBar, Input, Button, Link } from '@mui/material';
+import { AppBar, Input, Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useHistory } from 'react-router-dom';
 
-interface PageProps {
-     label: string,
-     tabIndex: string,
-     className: string,
-     contained: string,
-     placeholder: string,
-}
 const CreateAccount = () => {
      let history = useHistory();
      function handleCreateAccount() {
           history.push('/secure-account');
+     }
+     let [name,setName] = useState('');
+     let [nameValid,setNameValid] = useState(true);
+     let [accountId,setAccountId] = useState(true);
+     let [accountIdValid,setAccountIdValid] = useState(true);
+     let handleChange  = (e: any) => {
+          console.log(e.currentTarget.name)
+          if (e.currentTarget.name === "phone") {
+                setName(e.currentTarget.value);
+                (name !== '') &&
+                setNameValid(false)
+          } else if (e.currentTarget.name === "Email") {
+               setAccountId(e.currentTarget.value);
+               let userIdREgx = RegExp('^[a-zA-Z0-9]{4,10}$');
+               (userIdREgx.test(e.currentTarget.value)) &&
+               setAccountIdValid(false)
+          }
      }
      return (
          <div className="page-wrapper">
@@ -40,7 +50,9 @@ const CreateAccount = () => {
                                   <div className="form-field">
                                        <label className="fieldlable" htmlFor="verification">Full Name</label>
                                        <Input
+                                           name="name"
                                            type="text"
+                                           onChange={handleChange}
                                            placeholder="Ex. John doe"
                                            className="form-control"
                                        />
@@ -48,7 +60,9 @@ const CreateAccount = () => {
                                   <div className="form-field accountPersonalBox">
                                        <label className="fieldlable" htmlFor="verification">Account ID</label>
                                        <Input
+                                           name="username"
                                            type="text"
+                                           onChange={handleChange}
                                            placeholder="yourname"
                                            className="form-control"
                                        />
