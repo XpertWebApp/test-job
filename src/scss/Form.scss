@@ -47,8 +47,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .MuiInput-root {
+    div {
+      width: 100%;
+    }
+    input {
       margin: 4px;
+      width: 40px !important;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid #cfcfcf;
+      box-sizing: border-box;
+      border-radius: 6px;
+      height: 40px;
     }
   }
   &.verification-form {
