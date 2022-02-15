@@ -3,6 +3,8 @@ import { AppBar, Input, Button, Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useHistory } from 'react-router-dom';
+import OtpInput from 'react-otp-input';
+import { useState } from 'react';
 
 interface PageProps {
      label: string, 
@@ -12,9 +14,13 @@ interface PageProps {
      placeholder: string,
 }
 const Verification = () => {
+     const [otp, setotp] = useState('')
      let history = useHistory();
      function handleVerify() {
           history.push('/create-account');
+     }
+     const handleChange = (event:any) => {
+          setotp(event.taget.value)
      }
      return (
           <div className="page-wrapper">
@@ -38,30 +44,12 @@ const Verification = () => {
                          <form>
                               <label className="verifylabel" htmlFor="verification">Enter verification code</label>
                               <div className="multiOTPField">
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
-                                   <Input
-                                        type="number"
-                                        className="form-control"
-                                   />
+                              <OtpInput
+                                   value={otp}
+                                   onChange={handleChange}
+                                   numInputs={6}
+                                   separator={<span></span>}
+                              />
                               </div> 
                               <Button onClick={handleVerify} className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                     Continue
