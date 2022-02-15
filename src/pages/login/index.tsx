@@ -7,8 +7,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { useNavigate } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 
 interface PageProps {
      contained: string,
@@ -54,11 +53,6 @@ const Login = (props:PageProps) => {
      const handleChange = (event:any, newValue:any) => {
           setValue(newValue); 
      }; 
-     const history = useNavigate();
-     const handleOTP = () =>{
-          alert('Hello')
-          // history.push('/otp');
-     }
     const defaultProps = {
           foo: "default",
           placeholder: ""
@@ -69,6 +63,11 @@ const Login = (props:PageProps) => {
     const returnControls = (index:number):string=>{
         return  `simple-tabpanel-${index}`
     }
+    let history = useHistory();
+     function handleOTP() {
+          alert('Hello')
+          history.push('/verify');
+     }
      return (
           <div className="page-wrapper">
                <AppBar position="static" className="page-header">
@@ -102,7 +101,7 @@ const Login = (props:PageProps) => {
                                                   placeholder="johndoe@gmail.com"
                                                   className="form-control"
                                              />
-                                             <Button  className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
+                                             <Button onClick={handleOTP} className="login-continue continue-button" endIcon={<ChevronRightIcon />}>
                                                   Continue
                                              </Button>
                                         </form>

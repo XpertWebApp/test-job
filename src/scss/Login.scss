@@ -1,6 +1,5 @@
 .page-wrapper {
   .page-header {
-    background-color: $Theme-white;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -9,10 +8,33 @@
     background-color: $Background1;
     box-shadow: none;
     border-bottom: 1px solid $Border-color;
+    position: relative;
+    .close-verification {
+      position: absolute;
+      top: 18px;
+      right: 15px;
+    }
+    .account-progress {
+      position: absolute;
+      bottom: -3px;
+      left: 0px;
+      width: 35%;
+      height: 3px;
+      background-color: $Theme-Primary;
+      &.thirdpro {
+        width: 75%;
+      }
+    }
   }
 }
 .middle-content {
   padding: 25px;
+  &.secure-account {
+    padding-bottom: 5px;
+    & + .terms-policy-content {
+      border-bottom: none !important;
+    }
+  }
   .MuiBox-root {
     border: none !important;
     padding: 0px !important;
@@ -22,7 +44,7 @@
     .MuiTab-root {
       color: $Heading;
       text-transform: capitalize;
-      @include FontMidium;
+      @include FontMedium;
       min-width: 66px !important;
       min-height: 30px !important;
       padding: 6px 12px !important;
@@ -62,6 +84,27 @@
   .loginWith-button {
     width: 186px;
     height: 40px;
+  }
+  .bLink {
+    margin-top: 25px;
+    @include FontMedium;
+    display: block;
+  }
+  &.verifyBy-email {
+    .MuiTypography-root {
+      margin-top: 15px;
+    }
+  }
+  &.verification-links {
+    padding-top: 0px;
+  }
+  &.createAccount-content {
+    text-align: left;
+    padding-bottom: 0px;
+    p {
+      @include FontMedium;
+      color: $LabelColor;
+    }
   }
 }
 .main-content {

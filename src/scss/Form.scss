@@ -24,7 +24,7 @@
     }
   }
   .login-continue {
-    margin-top: 30px;
+    margin-top: 15px;
     width: 124px;
     height: 40px;
     .MuiSvgIcon-root {
@@ -41,5 +41,55 @@
   .Mui-disabled {
     color: $Theme-white;
     background-color: $LightButton;
+  }
+  .multiOTPField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .MuiInput-root {
+      margin: 4px;
+    }
+  }
+  &.verification-form {
+    border-bottom: 1px solid $Border-color;
+    padding-bottom: 20px;
+    .verifylabel {
+      color: $LabelColor;
+      @include FontMedium;
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+  .form-field {
+    margin-bottom: 15px;
+    .fieldlable {
+      text-align: left;
+      color: $Heading;
+      @include FontMedium;
+      margin-bottom: 6px;
+      display: block;
+    }
+    &.accountPersonalBox {
+      position: relative;
+      span {
+        color: $Theme-dark;
+        border-left: 1px solid $Active-Border;
+        display: block;
+        height: 45px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        min-width: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include LargeButtonFont;
+      }
+    }
+  }
+  .appInfo {
+    color: $Theme-dark;
+    @include FontSmall;
+    padding-top: 5px;
   }
 }
