@@ -1,26 +1,34 @@
-import CloseIcon from './../../assets/images/cross-icon.svg'
+import CloseIcon from './../../assets/images/cross-icon.svg';
 import { AppBar, Input, Button, Link } from '@mui/material';
 import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useHistory } from 'react-router-dom';
+import {useState} from "react";
 import OtpInput from 'react-otp-input';
-import { useState } from 'react';
 
-interface PageProps {
-     label: string, 
-     tabIndex: string,
-     className: string,
-     contained: string,
-     placeholder: string,
-}
+
 const Verification = () => {
      const [otp, setotp] = useState('')
      let history = useHistory();
      function handleVerify() {
           history.push('/create-account');
      }
+
+     const [otp,setOtp] = useState({
+          one:'',
+          two:'',
+          three:'',
+          four:'',
+          five:'',
+          six:'',
+     });
+
+     const handleKeyPress = (event:any)=>{
+          return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))
+
      const handleChange = (event:any) => {
           setotp(event.taget.value)
+
      }
      return (
           <div className="page-wrapper">

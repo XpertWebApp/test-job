@@ -5,20 +5,13 @@ import Box from '@mui/material/Box';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CopyIcon from './../../assets/images/copy-icon.svg'
 import { useHistory } from 'react-router-dom';
+import {seedCardData} from "../../constants";
 
-
-interface PageProps {
-     label: string,
-     tabIndex: string,
-     className: string,
-     contained: string,
-     placeholder: string,
-}
 
 const SecureAccount = () => {
-     const [seedPhrase, setseedPhrase] = useState(false)
+     const [seedPhrase, setSeedPhrase] = useState(false)
      function showSeed(){
-          setseedPhrase(true)
+          setSeedPhrase(true)
      }
      let history = useHistory();
      function handleContinueLogin() {
@@ -46,18 +39,18 @@ const SecureAccount = () => {
                          <div className="middle-content seed-phrase">
                               <h2>Seed phrase</h2>
                               <ul className="seed-card-box">
-                                   <li><span>1</span> gather</li>
-                                   <li><span>2</span> engage</li>
-                                   <li><span>3</span> father</li>
-                                   <li><span>4</span> plant</li>
-                                   <li><span>5</span> indego</li>
-                                   <li><span>6</span> dental</li>
-                                   <li><span>7</span> sick</li>
-                                   <li><span>8</span> fungus</li>
-                                   <li><span>9</span> river</li>
-                                   <li><span>10</span> morning</li>
-                                   <li><span>11</span> love</li>
-                                   <li><span>12</span> cow</li>
+                                   {
+                                        seedCardData.map((data,index)=>{
+                                             return(
+                                                 <li key={index}>
+                                                      <span>
+                                                           {data.id}
+                                                      </span>
+                                                      {data.text}
+                                                 </li>
+                                             )
+                                        })
+                                   }
                               </ul>
                               <button type="button" className="btn copy-seed">
                                    <img src={CopyIcon} alt="Copy"/>
