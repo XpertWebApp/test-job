@@ -1,0 +1,24 @@
+.dashboard-header {
+  @include FlexAllCenter;
+  .header-right {
+    @include FlexAllCenter;
+    img {
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.searchform {
+  flex: 1;
+  margin: 0px 30px;
+  .form-control {
+    background: #ffffff;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #dfdfe0;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 10px;
+  }
+}

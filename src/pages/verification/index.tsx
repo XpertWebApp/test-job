@@ -39,27 +39,27 @@ const Verification = () => {
                               <label className="verifylabel" htmlFor="verification">Enter verification code</label>
                               <div className="multiOTPField">
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                                    <Input
-                                        type="text"
+                                        type="number"
                                         className="form-control"
                                    />
                               </div> 
